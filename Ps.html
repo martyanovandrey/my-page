@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ps data</title>
+
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <style>
+      body {
+        padding: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Parse Saving and Getting Data</h1>
+
+    <p>This page sends and retrieves data from <a href="http://firebase.com">Firebase</a>.
+
+    <p>
+      fruit: <input type="date" id="fruit"></input><br/>
+      total: <input type="number" id="total" min="0" max="10" ></input>
+      <br/><br/>
+      <button id="submit">submit</button>
+    </p>
+
+    <p reversed id="data"></p>
+
+
+  </body>
+</html>
