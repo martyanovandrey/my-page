@@ -53,7 +53,9 @@ a:hover {
   }
   
   .card {
+    vertical-align: top;
     width: 350px;
+    height: 180px;
     margin-bottom: 60px;
     margin-right: 90px;
     padding: 45px 45px 70px;
