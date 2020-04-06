@@ -10,7 +10,7 @@ body, h1, h2, h3, h4, p, a {
   }
   
 a {
-    padding: 2px; /* Поля вокруг текста ссылки */
+    padding: 2px; /* Поля вокруг текста ссылки TEST GIT */
     text-decoration: none; /* Убирает подчеркивание для ссылок */
    } 
 
