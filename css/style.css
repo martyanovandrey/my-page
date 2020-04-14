@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, p, a {
+body, h1, h2, h3, h4, p, a, ul, li, span {
     margin: 0;
     font-size: 100%; font-weight: normal;
   }
@@ -10,7 +10,6 @@ body, h1, h2, h3, h4, p, a {
   }
   
 a {
-    padding: 2px; /* Поля вокруг текста ссылки TEST GIT */
     text-decoration: none; /* Убирает подчеркивание для ссылок */
    } 
 
@@ -94,4 +93,29 @@ a:hover {
     font-size: 24px;
     margin: auto;
     color: white;
+  }
+
+  .menu ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 30px;
+    display: none;
+  }
+  
+  .menu .title::before {
+    content: '▶ ';
+    color: lightgray;
+  }
+
+  .menu.open .title::before {
+    content: '▼ ';
+    font-size: 80%;
+  }
+  
+  .menu.open ul {
+    display: block;
+  }
+
+  .card.open {
+    padding-bottom: 200px;
   }

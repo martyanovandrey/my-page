@@ -14,9 +14,16 @@
     </div>
   </header>
   <section class='content'>
-    <div class='card'>
+    <div id='cardid' class='card'>
       <h3 class='card-title'>JavaScript</h3>
-      <p class='card-text'><a href="data visualization/data visualization.html">Data visualization</a></p>
+      <div id='menuid' class="menu">
+        <p class='card-text title'>Data visualization</p>
+        <ul class='card-text'>
+          <li><a href="data visualization\chartjs\chartjs.html">Chart.js</a></li>
+          <li><a href="data visualization\satellite map (js api)\js_api.html">Satellite map (js api, leaflet)</a></li>
+          <li>...</li>
+        </ul>
+      </div>
       <p class='card-text'><a href="threejs/threejs.html">Web 3D (Three.js)</a></p>
     </div>
     <div class='card no-right-margin'>
@@ -31,6 +38,21 @@
       <h3 class='card-title'>Contacts</h3>
       <p class='card-text'><a href="https://github.com/martyanovandrey">Github</a></p>
     </div>
+
+    <script>
+      let menuElem1 = document.getElementById('menuid');
+      let menuElem2 = document.getElementById('cardid');
+      let titleElem = menuElem1.querySelector('.title');
+      console.log(titleElem);
+  
+      titleElem.onclick = function() {
+        menuElem1.classList.toggle('open');
+        menuElem2.classList.toggle('open');
+        
+      };
+    </script>
+
+
   </section>
   <footer class='footer'>
     <h4 class='footer-author'>2020</h4>
