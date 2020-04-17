@@ -4,6 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/style.css?v=2">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] = m[i] || function () {
+        (m[i].a = m[i].a || []).push(arguments)
+      };
+      m[i].l = 1 * new Date();
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,
+        a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(62030359, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/62030359" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
   <title>Martyanov Andrey</title>
 </head>
 
@@ -31,7 +53,7 @@
       <p class='card-text'>Code</p>
     </div>
     <div class='card'>
-      <h3 class='card-title'>Other</h3>
+      <h3 class='card-title'>Things i've learned</h3>
       <p class='card-text'>Code</p>
     </div>
     <div class='card no-right-margin'>
@@ -44,11 +66,11 @@
       let menuElem2 = document.getElementById('cardid');
       let titleElem = menuElem1.querySelector('.title');
       console.log(titleElem);
-  
-      titleElem.onclick = function() {
+
+      titleElem.onclick = function () {
         menuElem1.classList.toggle('open');
         menuElem2.classList.toggle('open');
-        
+
       };
     </script>
 
