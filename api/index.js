@@ -19,6 +19,7 @@ app.get('/api', (request, responce) => {
         }
         responce.json(data);
     });
+    responce.render('index', {});
 });
 
 app.post('/api', (request, responce) => {
