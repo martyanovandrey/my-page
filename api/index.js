@@ -22,6 +22,7 @@ app.get('/api', (request, responce) => {
     responce.render('index', {});
 });
 
+
 app.post('/api', (request, responce) => {
     console.log('I got a request!');
     const data = request.body;
