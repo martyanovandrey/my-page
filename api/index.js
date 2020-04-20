@@ -1,6 +1,7 @@
 const express = require('express');
 const Datastore = require('nedb');
-const ip = '194.67.92.127';
+//const ip = '194.67.92.127';
+const ip = '127.0.0.1';
 const port = 80;
 
 const app = express();
@@ -19,7 +20,6 @@ app.get('/api', (request, responce) => {
         }
         responce.json(data);
     });
-    responce.render('index', {});
 });
 
 
