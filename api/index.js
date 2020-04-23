@@ -1,22 +1,33 @@
-const express = require('express');
-const Datastore = require('nedb');
+const https = require("https"),
+  fs = require("fs"),
+  http = require('http'),
+  express = require('express'),
+  helmet = require("helmet");
 const ip = '194.67.92.127';
-const port = 80;
-const http = require('http');
-const https = require('https');
-const fs = require('fs');
-const privateKey   = fs.readFileSync('/etc/ssl/martyanovandrey.key', 'utf8');
-const certificate = fs.readFileSync('/etc/ssl/martyanovandrey.crt', 'utf8');
-
-const options = {key: privateKey, cert: certificate};
-
+const options = {
+  key: fs.readFileSync('/etc/ssl/martyanovandrey.key', 'utf8'),
+  cert: fs.readFileSync('/etc/ssl/martyanovandrey.crt', 'utf8')
+};
 const app = express();
-const server = https.createServer(options, app);
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(options, app);
 
-server.listen(port, ip, () => console.log("Listening to "+ip+":"+port));
+httpServer.listen(80, () => {
+  console.log('HTTP Server running on port 80');
+});
+https.createServer(options, app).listen(443, ip, () => {
+  console.log('HTTPS Server running on port 443');
+});
+
 app.use(express.static('public'));
-app.use(express.json({ limit: '1mb' }));
+app.use(express.json({
+  limit: '1mb'
+}));
 
+app.use(helmet()); // Add Helmet as a middleware
+
+//database
+const Datastore = require('nedb');
 const database = new Datastore('database.db');
 database.loadDatabase();
 
@@ -39,9 +50,3 @@ app.post('/api', (request, responce) => {
     database.insert(data);
     responce.json(data);
 });
-
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(options, app);
-
-//httpServer.listen(8080);
-//httpsServer.listen(8443);
